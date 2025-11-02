@@ -2,11 +2,25 @@
 // Handles navigation, form validation, gallery filtering, and interactivity
 class PermanentBeautyWebsite {
     constructor() {
+        this.menuToggle = null;
+        this.navMenu = null;
+        this.contactForm = null;
+        this.filterButtons = document.querySelectorAll('.filter-btn');
+        this.galleryItems = document.querySelectorAll('.gallery-item');
+        // Wait for components to load before initializing
+        if (document.querySelector('#header-placeholder')) {
+            window.addEventListener('componentsLoaded', () => this.initAfterComponents());
+        }
+        else {
+            // Fallback if components aren't being used
+            this.initAfterComponents();
+        }
+    }
+    initAfterComponents() {
+        // Query elements after components are loaded
         this.menuToggle = document.querySelector('.menu-toggle');
         this.navMenu = document.querySelector('.nav-menu');
         this.contactForm = document.querySelector('#contactForm');
-        this.filterButtons = document.querySelectorAll('.filter-btn');
-        this.galleryItems = document.querySelectorAll('.gallery-item');
         this.init();
     }
     init() {
