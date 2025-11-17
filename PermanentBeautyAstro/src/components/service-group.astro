@@ -1,5 +1,6 @@
 ---
 import type { ServiceGroup } from '../data/services';
+import ServiceDetail from './service-detail.astro';
 
 interface Props {
     serviceGroup: ServiceGroup;
@@ -9,7 +10,7 @@ const { serviceGroup } = Astro.props;
 ---
 
 <section class="service-group-detail">
-    <div class="service-group-header mb-4">
+    <div class="service-group-header mb-5">
         <div class="service-group-descriptions">
             {serviceGroup.description.map((desc) => (
                 <div class="description-block mb-4">
@@ -32,7 +33,7 @@ const { serviceGroup } = Astro.props;
     </div>
 
     {serviceGroup.images && serviceGroup.images.length > 0 && (
-        <div class="service-group-images">
+        <div class="service-group-images mb-5">
             <div class="row g-3">
                 {serviceGroup.images.map((image) => (
                     <div class="col-12 col-md-6 col-lg-4">
@@ -44,6 +45,13 @@ const { serviceGroup } = Astro.props;
             </div>
         </div>
     )}
+
+    <!-- Individual Services -->
+    <div class="services-list">
+        {serviceGroup.services.map((service) => (
+            <ServiceDetail service={service} />
+        ))}
+    </div>
 </section>
 
 <style>

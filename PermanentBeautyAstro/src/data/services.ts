@@ -14,7 +14,6 @@ export interface Service {
     shortDescription?: string;
     price: number;
     description: Description[];
-    features: string[];
     images: string[];
 }
 
@@ -64,13 +63,7 @@ export const serviceGroups: ServiceGroup[] = [
                         text: "Our certified artists use precision hand tools and premium pigments to create incredibly realistic brow hairs that blend seamlessly with your natural brows. The result is fuller, more defined eyebrows that look completely natural and last 12-18 months."
                     }
                 ],
-                features: [
-                    "Natural, hair-like strokes",
-                    "Customized shape and color",
-                    "Lasts 12-18 months",
-                    "Includes touch-up session"
-                ],
-                images: ["microblading-1.jpg", "microblading-2.jpg"]
+                images: ["microblading-1.jpg", "microblading-2.jpg", "microblading-3.jpg", "microblading-4.jpg"]
             },
             {
                 title: "Powder Brows",
@@ -88,13 +81,7 @@ export const serviceGroups: ServiceGroup[] = [
                         text: "Powder brows are created using a digital machine that deposits tiny dots of pigment in the skin, creating a soft shaded effect similar to makeup. This technique is ideal for those who prefer a more filled-in, defined look and offers superior longevity of 18-24 months."
                     }
                 ],
-                features: [
-                    "Soft, makeup-like finish",
-                    "Great for all skin types",
-                    "Fuller appearance",
-                    "Lasts 18-24 months"
-                ],
-                images: ["powder-brows-1.jpg", "powder-brows-2.jpg"]
+                images: ["powder-brows-1.jpg", "powder-brows-2.jpg", "powder-brows-3.jpg", "powder-brows-4.jpg"]
             }
         ]
     },
@@ -129,13 +116,7 @@ export const serviceGroups: ServiceGroup[] = [
                         text: "Choose from subtle lash enhancement, classic liner, or dramatic winged styles. Perfect for active lifestyles, those with allergies to traditional makeup, or anyone who wants to simplify their beauty routine. The pigment is carefully implanted along the lash line for a flawless, long-lasting result."
                     }
                 ],
-                features: [
-                    "Top, bottom, or both lash lines",
-                    "Various styles available",
-                    "Waterproof and smudge-proof",
-                    "Lasts 2-3 years"
-                ],
-                images: ["eyeliner-1.jpg", "eyeliner-2.jpg"]
+                images: ["eyeliner-1.jpg", "eyeliner-2.jpg", "eyeliner-3.jpg", "eyeliner-4.jpg"]
             }
         ]
     },
@@ -170,12 +151,6 @@ export const serviceGroups: ServiceGroup[] = [
                         titleType: HeadingType.H4,
                         text: "Lip blushing is ideal for correcting asymmetry, defining lip borders, and adding a youthful flush of color. The semi-permanent pigment fades gracefully over 2-3 years, maintaining a soft, natural appearance throughout. Wake up with perfectly tinted lips every day!"
                     }
-                ],
-                features: [
-                    "Natural-looking color enhancement",
-                    "Custom color matching",
-                    "Corrects asymmetry",
-                    "Lasts 2-3 years"
                 ],
                 images: ["lip-blushing-1.jpg", "lip-blushing-2.jpg"]
             }
@@ -212,12 +187,6 @@ export const serviceGroups: ServiceGroup[] = [
                         text: "Whether you want to create a new beauty mark or enhance a natural one, we'll help you choose the perfect placement and size. The procedure is quick, virtually painless, and results in a permanent beauty mark that looks completely natural."
                     }
                 ],
-                features: [
-                    "Custom placement",
-                    "Natural appearance",
-                    "Quick procedure",
-                    "Long-lasting results"
-                ],
                 images: ["beauty-mark-1.jpg"]
             },
             {
@@ -234,12 +203,6 @@ export const serviceGroups: ServiceGroup[] = [
                         titleType: HeadingType.H4,
                         text: "Our scar camouflage service works on various types of scars including surgical scars, stretch marks, vitiligo, and more. Using advanced color theory and matching techniques, we carefully select pigments that blend perfectly with your skin tone. A consultation is required to assess your needs and discuss expected outcomes."
                     }
-                ],
-                features: [
-                    "Personalized assessment",
-                    "Color matching expertise",
-                    "Various scar types",
-                    "Consultation required"
                 ],
                 images: ["scar-camouflage-1.jpg"]
             }
@@ -272,12 +235,6 @@ export const serviceGroups: ServiceGroup[] = [
                         text: "Our classic manicure includes nail shaping, cuticle care, hand massage, and your choice of polish. Perfect for maintaining healthy, beautiful nails."
                     }
                 ],
-                features: [
-                    "Nail shaping and filing",
-                    "Cuticle care and treatment",
-                    "Relaxing hand massage",
-                    "Choice of polish color"
-                ],
                 images: ["classic-manicure-1.jpg", "classic-manicure-2.jpg"]
             },
             {
@@ -291,12 +248,6 @@ export const serviceGroups: ServiceGroup[] = [
                         text: "Enjoy chip-resistant, glossy nails that last up to 3 weeks. Our gel manicure includes complete nail care with professional gel polish application."
                     }
                 ],
-                features: [
-                    "Lasts up to 3 weeks",
-                    "Chip-resistant finish",
-                    "High-gloss shine",
-                    "Wide color selection"
-                ],
                 images: ["gel-manicure-1.jpg", "gel-manicure-2.jpg"]
             },
             {
@@ -309,12 +260,6 @@ export const serviceGroups: ServiceGroup[] = [
                         titleType: HeadingType.H3,
                         text: "Indulge in our most luxurious manicure experience. Includes exfoliation, hydrating mask, extended massage, and your choice of regular or gel polish."
                     }
-                ],
-                features: [
-                    "Exfoliating scrub treatment",
-                    "Nourishing hand mask",
-                    "Extended hand and arm massage",
-                    "Regular or gel polish included"
                 ],
                 images: ["deluxe-manicure-1.jpg", "deluxe-manicure-2.jpg"]
             }
@@ -347,12 +292,6 @@ export const serviceGroups: ServiceGroup[] = [
                         text: "Our classic pedicure includes warm soak, nail care, callus removal, foot massage, and polish. The perfect treatment to keep your feet healthy and beautiful."
                     }
                 ],
-                features: [
-                    "Warm foot soak",
-                    "Nail trimming and shaping",
-                    "Callus removal",
-                    "Relaxing foot massage"
-                ],
                 images: ["classic-pedicure-1.jpg", "classic-pedicure-2.jpg"]
             },
             {
@@ -366,12 +305,6 @@ export const serviceGroups: ServiceGroup[] = [
                         text: "Complete pedicure with gel polish that lasts up to 3 weeks. Includes all classic pedicure services plus professional gel application."
                     }
                 ],
-                features: [
-                    "Complete foot care treatment",
-                    "Chip-resistant gel polish",
-                    "Lasts up to 3 weeks",
-                    "Beautiful color options"
-                ],
                 images: ["gel-pedicure-1.jpg", "gel-pedicure-2.jpg"]
             },
             {
@@ -384,12 +317,6 @@ export const serviceGroups: ServiceGroup[] = [
                         titleType: HeadingType.H3,
                         text: "Our signature spa pedicure includes exfoliating scrub, hydrating mask, hot stone massage, and extended relaxation. Choose regular or gel polish for this luxurious treatment."
                     }
-                ],
-                features: [
-                    "Sugar scrub exfoliation",
-                    "Hydrating foot mask",
-                    "Hot stone massage",
-                    "Extended leg and foot massage"
                 ],
                 images: ["deluxe-pedicure-1.jpg", "deluxe-pedicure-2.jpg"]
             }
