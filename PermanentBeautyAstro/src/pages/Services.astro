@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/page-layout.astro';
+import ServiceGroupTile from '../components/service-group-tile.astro';
 import serviceGroups from '../data/services';
 
 const processSteps = [
@@ -24,60 +25,13 @@ const processSteps = [
         description: "Touch-up session to ensure perfect results and answer any questions."
     }
 ];
-
-// Helper function to format price
-function formatPrice(price: number): string {
-    if (price === 0) return "Consultation Required";
-    return `Starting at $${price}`;
-}
 ---
 
 <PageLayout title="Our Services" subtitle="Professional Permanent Makeup & Cosmetic Treatments">
-    <section class="services-detailed">
+    <section class="services-section py-4">
         {serviceGroups.map((group) => (
-                <div class="service-group">
-                    <div class="service-group-header">
-                        <h2 class="group-name">{group.name}</h2>
-                        {group.description.map((desc) => (
-                            <div class="group-description">
-                                {desc.titleType === 'h2' ? (
-                                    <h2>{desc.title}</h2>
-                                ) : desc.titleType === 'h3' ? (
-                                    <h3>{desc.title}</h3>
-                                ) : (
-                                    <h4>{desc.title}</h4>
-                                )}
-                                <p>{desc.text}</p>
-                            </div>
-                        ))}
-                    </div>
-
-                    {group.services.map((service, index) => (
-                        <div class={`service-detail ${index % 2 === 1 ? 'reverse' : ''}`}>
-                            <div class="service-detail-content">
-                                <h3>{service.title}</h3>
-                                <p class="service-price">{formatPrice(service.price)}</p>
-                                {service.description.map((desc) => (
-                                    <div>
-                                        <p class="service-description">{desc.text}</p>
-                                    </div>
-                                ))}
-                                <ul class="service-features">
-                                    {service.features.map((feature) => (
-                                        <li>✓ {feature}</li>
-                                    ))}
-                                </ul>
-                                <a href="/contact" class="btn btn-primary">
-                                    {service.price === 0 ? 'Contact Us' : 'Learn More'}
-                                </a>
-                            </div>
-                            <div class="service-detail-image">
-                                <div class="placeholder-image">{service.images[0] || 'Service Image'}</div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            ))}
+            <ServiceGroupTile serviceGroup={group} />
+        ))}
     </section>
 
     <section class="process">
@@ -101,149 +55,116 @@ function formatPrice(price: number): string {
 </PageLayout>
 
 <style>
-   /* ===================================
-   Services Section
-   =================================== */
-    .service-group {
-        margin-bottom: 4rem;
+    /* ===================================
+       Services Section
+       =================================== */
+    .services-section {
+        margin-bottom: 3rem;
     }
 
-    .service-group-header {
-        text-align: center;
-        margin-bottom: 3rem;
-        padding: 2rem;
+    /* ===================================
+       Process Section
+       =================================== */
+    .process {
+        padding: 4rem 0;
         background: linear-gradient(135deg, var(--color-bg-light) 0%, #FFFFFF 100%);
-        border-radius: var(--border-radius);
-    }
-
-    .group-name {
-        color: var(--color-primary);
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .group-description {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .group-description h2,
-    .group-description h3,
-    .group-description h4 {
-        color: var(--color-secondary);
-        margin-bottom: 1rem;
-        margin-top: 1.5rem;
-    }
-
-    .group-description h2 {
-        font-size: 2rem;
-    }
-
-    .group-description h3 {
-        font-size: 1.5rem;
-    }
-
-    .group-description p {
-        color: var(--color-text-light);
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-
-    .service-detail {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
         margin-bottom: 3rem;
+    }
+
+    .section-title {
+        text-align: center;
+        color: var(--color-secondary);
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .process-step {
+        text-align: center;
         padding: 2rem;
-        background-color: var(--color-accent);
+        background: var(--color-accent);
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
+        transition: transform 0.3s ease;
     }
 
-    .service-detail.reverse {
-        direction: rtl;
+    .process-step:hover {
+        transform: translateY(-5px);
     }
 
-    .service-detail.reverse > * {
-        direction: ltr;
-    }
-
-    .service-detail-content h3 {
-        color: var(--color-secondary);
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background: var(--color-primary);
+        color: var(--color-accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 2rem;
-        margin-bottom: 0.5rem;
+        font-weight: bold;
+        margin: 0 auto 1.5rem;
     }
 
-    .service-price {
-        color: var(--color-primary);
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
+    .process-step h3 {
+        color: var(--color-secondary);
+        margin-bottom: 1rem;
     }
 
-    .service-description {
+    .process-step p {
         color: var(--color-text-dark);
         line-height: 1.6;
-        margin-bottom: 1.5rem;
     }
 
-    .service-features {
-        list-style: none;
-        margin: 1.5rem 0;
-        padding: 0;
-    }
-
-    .service-features li {
-        padding: 0.5rem 0;
-        color: var(--color-text-dark);
-    }
-
-    .service-detail-image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 300px;
-    }
-
-    .placeholder-image {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, var(--color-bg-light) 0%, #E8E8E8 100%);
+    /* ===================================
+       CTA Section
+       =================================== */
+    .cta {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, var(--color-primary) 0%, #A01828 100%);
+        color: var(--color-accent);
         border-radius: var(--border-radius);
-        color: var(--color-text-light);
-        font-style: italic;
+    }
+
+    .cta h2 {
+        color: var(--color-accent);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
     }
 
     /* ===================================
        Responsive Design
        =================================== */
     @media (max-width: 768px) {
-        .service-detail,
-        .service-detail.reverse {
-            grid-template-columns: 1fr;
-            direction: ltr;
-            padding: 1.5rem;
-            gap: 2rem;
-        }
-
-        .service-detail-image {
-            order: -1;
-            min-height: 250px;
-        }
-
-        .services-detailed {
-            padding: 2rem 1rem;
-        }
-
-        .service-detail {
-            margin-bottom: 2rem;
+        .section-title {
+            font-size: 2rem;
         }
 
         .process-steps {
             grid-template-columns: 1fr;
+            padding: 0 1rem;
+        }
+
+        .cta {
+            padding: 3rem 1.5rem;
+        }
+
+        .cta h2 {
+            font-size: 1.5rem;
         }
 
         .btn {
