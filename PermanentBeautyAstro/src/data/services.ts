@@ -19,7 +19,7 @@ export interface Service {
 }
 
 export interface Description {
-    title: string;
+    title?: string;
     titleType: HeadingType;
     text: string;
 }
@@ -38,12 +38,16 @@ export const serviceGroups: ServiceGroup[] = [
         shortDescription: "Perfect your brows with our professional microblading and powder brow techniques.",
         description: [
             {
-                title: "Perfect Your Brows",
+                title: "Transform Your Brows",
                 titleType: HeadingType.H2,
-                text: "Our eyebrow services are designed to enhance your natural beauty with techniques that create the perfect shape, fullness, and definition for your unique facial features."
+                text: "Our eyebrow services are designed to enhance your natural beauty with techniques that create the perfect shape, fullness, and definition for your unique facial features. Whether you prefer the natural look of microblading or the soft, filled appearance of powder brows, we have the expertise to deliver stunning results."
+            },
+            {
+                titleType: HeadingType.H3,
+                text: "Using premium pigments and state-of-the-art techniques, we ensure your brows are perfectly tailored to complement your face shape and skin tone. Each treatment includes a thorough consultation, precise application, and a complimentary touch-up session to guarantee your complete satisfaction."
             }
         ],
-        images: ["eyebrow-services-main.jpg"],
+        images: ["eyebrow-services-main.jpg", "eyebrow-services-before-after.jpg"],
         services: [
             {
                 title: "Microblading",
@@ -53,7 +57,11 @@ export const serviceGroups: ServiceGroup[] = [
                     {
                         title: "Natural Hair-Like Strokes",
                         titleType: HeadingType.H3,
-                        text: "Transform your eyebrows with our signature microblading technique. This semi-permanent treatment creates natural-looking, hair-like strokes that fill in sparse areas and define your brow shape."
+                        text: "Transform your eyebrows with our signature microblading technique. This semi-permanent treatment creates natural-looking, hair-like strokes that fill in sparse areas and define your brow shape perfectly."
+                    },
+                    {
+                        titleType: HeadingType.H4,
+                        text: "Our certified artists use precision hand tools and premium pigments to create incredibly realistic brow hairs that blend seamlessly with your natural brows. The result is fuller, more defined eyebrows that look completely natural and last 12-18 months."
                     }
                 ],
                 features: [
@@ -72,7 +80,12 @@ export const serviceGroups: ServiceGroup[] = [
                     {
                         title: "Soft Makeup Finish",
                         titleType: HeadingType.H3,
-                        text: "Achieve a soft, powdered makeup look that lasts. This technique creates a fuller, more defined brow with a gradient effect from light to dark, perfect for all skin types."
+                        text: "Achieve a soft, powdered makeup look that lasts. This technique creates a fuller, more defined brow with a gradient effect from light to dark, perfect for all skin types including oily and mature skin."
+                    },
+                    {
+                        title: "Long-Lasting Beauty",
+                        titleType: HeadingType.H4,
+                        text: "Powder brows are created using a digital machine that deposits tiny dots of pigment in the skin, creating a soft shaded effect similar to makeup. This technique is ideal for those who prefer a more filled-in, defined look and offers superior longevity of 18-24 months."
                     }
                 ],
                 features: [
@@ -92,10 +105,14 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Enhance Your Eyes",
                 titleType: HeadingType.H2,
-                text: "Wake up with perfectly defined eyes every morning. Our permanent eyeliner services enhance your lash line with precision and artistry."
+                text: "Wake up with perfectly defined eyes every morning. Our permanent eyeliner services enhance your lash line with precision and artistry, creating the illusion of fuller, darker lashes without the daily hassle of makeup application."
+            },
+            {
+                titleType: HeadingType.H3,
+                text: "Whether you prefer a subtle lash enhancement or a bold winged liner, our experienced technicians will customize your permanent eyeliner to suit your style. The procedure is safe, precise, and designed to enhance your natural beauty while saving you time in your daily routine."
             }
         ],
-        images: ["eye-services-main.jpg"],
+        images: ["eye-services-main.jpg", "eye-services-detail.jpg"],
         services: [
             {
                 title: "Permanent Eyeliner",
@@ -106,6 +123,10 @@ export const serviceGroups: ServiceGroup[] = [
                         title: "Effortless Definition",
                         titleType: HeadingType.H3,
                         text: "Wake up with perfectly defined eyes every morning. Our permanent eyeliner enhances your lash line with a subtle or dramatic look that won't smudge or fade throughout the day."
+                    },
+                    {
+                        titleType: HeadingType.H4,
+                        text: "Choose from subtle lash enhancement, classic liner, or dramatic winged styles. Perfect for active lifestyles, those with allergies to traditional makeup, or anyone who wants to simplify their beauty routine. The pigment is carefully implanted along the lash line for a flawless, long-lasting result."
                     }
                 ],
                 features: [
@@ -125,10 +146,15 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Beautiful Lips",
                 titleType: HeadingType.H2,
-                text: "Enhance your lips with natural color and definition that lasts. Our lip services create fuller, more defined lips with a beautiful, natural-looking tint."
+                text: "Enhance your lips with natural color and definition that lasts. Our lip services create fuller, more defined lips with a beautiful, natural-looking tint that enhances your natural lip color."
+            },
+            {
+                title: "Expert Color Matching",
+                titleType: HeadingType.H3,
+                text: "Our lip blushing technique uses custom color blending to match your natural lip tone or create your desired shade. The result is perfectly symmetrical, beautifully colored lips that look natural and require no daily maintenance."
             }
         ],
-        images: ["lip-services-main.jpg"],
+        images: ["lip-services-main.jpg", "lip-services-colors.jpg"],
         services: [
             {
                 title: "Lip Blushing",
@@ -138,7 +164,11 @@ export const serviceGroups: ServiceGroup[] = [
                     {
                         title: "Natural Lip Enhancement",
                         titleType: HeadingType.H3,
-                        text: "Enhance your lips with a natural tint that defines, adds color, and creates the illusion of fuller lips. Perfect for those wanting a subtle, everyday look."
+                        text: "Enhance your lips with a natural tint that defines, adds color, and creates the illusion of fuller lips. Perfect for those wanting a subtle, everyday look that enhances your natural beauty."
+                    },
+                    {
+                        titleType: HeadingType.H4,
+                        text: "Lip blushing is ideal for correcting asymmetry, defining lip borders, and adding a youthful flush of color. The semi-permanent pigment fades gracefully over 2-3 years, maintaining a soft, natural appearance throughout. Wake up with perfectly tinted lips every day!"
                     }
                 ],
                 features: [
@@ -158,10 +188,14 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Specialized Treatments",
                 titleType: HeadingType.H2,
-                text: "Unique cosmetic enhancements and corrective treatments tailored to your individual needs."
+                text: "Unique cosmetic enhancements and corrective treatments tailored to your individual needs. From adding a signature beauty mark to camouflaging scars, we offer specialized services that make a meaningful difference."
+            },
+            {
+                titleType: HeadingType.H3,
+                text: "Each special service treatment is customized to achieve your specific goals. Our experienced technicians take the time to understand your needs and create a personalized treatment plan that delivers natural-looking, confidence-boosting results."
             }
         ],
-        images: ["special-services-main.jpg"],
+        images: ["special-services-main.jpg", "special-services-examples.jpg"],
         services: [
             {
                 title: "Beauty Mark",
@@ -171,7 +205,11 @@ export const serviceGroups: ServiceGroup[] = [
                     {
                         title: "Timeless Elegance",
                         titleType: HeadingType.H3,
-                        text: "Add a signature beauty mark or enhance an existing one. A subtle touch that adds character and elegance to your look."
+                        text: "Add a signature beauty mark or enhance an existing one. A subtle touch that adds character and elegance to your look, inspired by classic Hollywood glamour."
+                    },
+                    {
+                        titleType: HeadingType.H4,
+                        text: "Whether you want to create a new beauty mark or enhance a natural one, we'll help you choose the perfect placement and size. The procedure is quick, virtually painless, and results in a permanent beauty mark that looks completely natural."
                     }
                 ],
                 features: [
@@ -190,7 +228,11 @@ export const serviceGroups: ServiceGroup[] = [
                     {
                         title: "Restore Confidence",
                         titleType: HeadingType.H3,
-                        text: "Minimize the appearance of scars through specialized pigmentation techniques. We'll assess your unique situation and create a customized treatment plan."
+                        text: "Minimize the appearance of scars through specialized pigmentation techniques. We'll assess your unique situation and create a customized treatment plan that helps scars blend seamlessly with surrounding skin."
+                    },
+                    {
+                        titleType: HeadingType.H4,
+                        text: "Our scar camouflage service works on various types of scars including surgical scars, stretch marks, vitiligo, and more. Using advanced color theory and matching techniques, we carefully select pigments that blend perfectly with your skin tone. A consultation is required to assess your needs and discuss expected outcomes."
                     }
                 ],
                 features: [
@@ -211,9 +253,13 @@ export const serviceGroups: ServiceGroup[] = [
                 title: "Beautiful Hands",
                 titleType: HeadingType.H2,
                 text: "Pamper your hands with our professional manicure services. From classic to gel manicures, we offer treatments that keep your nails healthy and beautifully polished."
+            },
+            {
+                titleType: HeadingType.H3,
+                text: "Our manicure services combine expert nail care with relaxation. Each treatment includes nail shaping, cuticle care, moisturizing treatments, and your choice of polish. Enjoy a moment of self-care while we transform your hands into works of art."
             }
         ],
-        images: ["manicure-services-main.jpg"],
+        images: ["manicure-services-main.jpg", "manicure-services-colors.jpg"],
         services: [
             {
                 title: "Classic Manicure",
@@ -282,9 +328,13 @@ export const serviceGroups: ServiceGroup[] = [
                 title: "Beautiful Feet",
                 titleType: HeadingType.H2,
                 text: "Treat your feet to professional pedicure services. From classic to luxury spa pedicures, we provide complete foot care that leaves your feet feeling refreshed and looking beautiful."
+            },
+            {
+                titleType: HeadingType.H3,
+                text: "Our pedicure treatments go beyond just polish. We focus on comprehensive foot health, removing calluses, treating cuticles, and providing therapeutic massage. Relax in our comfortable spa chairs while we pamper your feet from heel to toe."
             }
         ],
-        images: ["pedicure-services-main.jpg"],
+        images: ["pedicure-services-main.jpg", "pedicure-services-spa.jpg"],
         services: [
             {
                 title: "Classic Pedicure",

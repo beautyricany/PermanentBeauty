@@ -22,7 +22,7 @@ const collapseId = groupId || serviceGroup.name.toLowerCase().replace(/\s+/g, '-
             aria-controls={collapseId}
         >
             <div>
-                <h2 class="service-group-name mb-2">{serviceGroup.name}</h2>
+                <h2 class="section-title service-group-name mb-2">{serviceGroup.name}</h2>
                 {serviceGroup.shortDescription && (
                     <p class="service-group-description text-muted mb-0">{serviceGroup.shortDescription}</p>
                 )}
@@ -60,6 +60,15 @@ const collapseId = groupId || serviceGroup.name.toLowerCase().replace(/\s+/g, '-
         text-align: left;
     }
 
+    .service-group-name {
+        text-align: left;
+    }
+
+    .service-group-name::after {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
     .collapse-toggle {
         background: none;
         border: none;
@@ -81,14 +90,14 @@ const collapseId = groupId || serviceGroup.name.toLowerCase().replace(/\s+/g, '-
     }
 
     .service-group-name {
-        color: var(--color-primary);
+        color: var(--color-secondary);
         font-size: 2rem;
         font-weight: 600;
         transition: color 0.3s ease;
     }
 
     .collapse-toggle:hover .service-group-name {
-        color: var(--color-secondary);
+        color: var(--color-primary);
     }
 
     .service-group-description {
