@@ -7,6 +7,7 @@ export interface ServiceGroup {
     description: Description[];
     images: string[];
     services: Service[];
+    minimalServices: MinimalService[];
 }
 
 export interface Service {
@@ -15,6 +16,11 @@ export interface Service {
     price: number;
     description: Description[];
     images: string[];
+}
+
+export interface MinimalService {
+    title: string;
+    price: number;
 }
 
 export interface Description {
@@ -51,7 +57,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Microblading",
                 shortDescription: "Natural hair-like strokes for fuller, defined brows.",
-                price: 450,
+                price: 11000,
                 description: [
                     {
                         title: "Natural Hair-Like Strokes",
@@ -68,7 +74,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Powder Brows",
                 shortDescription: "Soft, powdered makeup look perfect for all skin types.",
-                price: 475,
+                price: 12000,
                 description: [
                     {
                         title: "Soft Makeup Finish",
@@ -83,6 +89,11 @@ export const serviceGroups: ServiceGroup[] = [
                 ],
                 images: ["powder-brows-1.jpg", "powder-brows-2.jpg", "powder-brows-3.jpg", "powder-brows-4.jpg"]
             }
+        ],
+        minimalServices: [
+            { title: "Brow Touch-Up Session", price: 3500 },
+            { title: "Brow Color Refresh", price: 5000 },
+            { title: "Combination Brows", price: 13000 }
         ]
     },
     {
@@ -104,7 +115,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Permanent Eyeliner",
                 shortDescription: "Waterproof, smudge-proof eyeliner that lasts years.",
-                price: 375,
+                price: 9000,
                 description: [
                     {
                         title: "Effortless Definition",
@@ -118,6 +129,12 @@ export const serviceGroups: ServiceGroup[] = [
                 ],
                 images: ["eyeliner-1.jpg", "eyeliner-2.jpg", "eyeliner-3.jpg", "eyeliner-4.jpg"]
             }
+        ],
+        minimalServices: [
+            { title: "Eyeliner Touch-Up", price: 3000 },
+            { title: "Lower Lash Line Only", price: 6000 },
+            { title: "Winged Eyeliner", price: 10000 },
+            { title: "Lash Enhancement", price: 7000 }
         ]
     },
     {
@@ -140,7 +157,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Lip Blushing",
                 shortDescription: "Natural tint for fuller-looking lips with custom color matching.",
-                price: 500,
+                price: 12000,
                 description: [
                     {
                         title: "Natural Lip Enhancement",
@@ -154,7 +171,8 @@ export const serviceGroups: ServiceGroup[] = [
                 ],
                 images: ["lip-blushing-1.jpg", "lip-blushing-2.jpg", "lip-blushing-3.jpg", "lip-blushing-4.jpg"]
             }
-        ]
+        ],
+        minimalServices: []
     },
     {
         name: "Special Services",
@@ -206,6 +224,11 @@ export const serviceGroups: ServiceGroup[] = [
                 ],
                 images: ["scar-camouflage-1.jpg"]
             }
+        ],
+        minimalServices: [
+            { title: "Freckles Enhancement", price: 5000 },
+            { title: "Areola Restoration", price: 0 },
+            { title: "Hairline Enhancement", price: 0 }
         ]
     },
     {
@@ -227,7 +250,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Classic Manicure",
                 shortDescription: "Traditional manicure with nail shaping, cuticle care, and polish.",
-                price: 35,
+                price: 400,
                 description: [
                     {
                         title: "Timeless Nail Care",
@@ -240,7 +263,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Gel Manicure",
                 shortDescription: "Long-lasting gel polish with chip-resistant shine for up to 3 weeks.",
-                price: 55,
+                price: 600,
                 description: [
                     {
                         title: "Long-Lasting Shine",
@@ -253,7 +276,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Deluxe Spa Manicure",
                 shortDescription: "Ultimate hand pampering with exfoliation, mask, and extended massage.",
-                price: 65,
+                price: 800,
                 description: [
                     {
                         title: "Ultimate Hand Pampering",
@@ -263,6 +286,12 @@ export const serviceGroups: ServiceGroup[] = [
                 ],
                 images: ["deluxe-manicure-1.jpg", "deluxe-manicure-2.jpg"]
             }
+        ],
+        minimalServices: [
+            { title: "Polish Change", price: 150 },
+            { title: "Gel Polish Removal", price: 100 },
+            { title: "Nail Repair", price: 120 },
+            { title: "French Manicure", price: 1200 }
         ]
     },
     {
@@ -284,7 +313,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Classic Pedicure",
                 shortDescription: "Essential foot care with nail trimming, callus removal, and polish.",
-                price: 45,
+                price: 500,
                 description: [
                     {
                         title: "Essential Foot Care",
@@ -297,7 +326,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Gel Pedicure",
                 shortDescription: "Long-lasting gel polish on perfectly pampered feet.",
-                price: 65,
+                price: 750,
                 description: [
                     {
                         title: "Long-Lasting Beauty",
@@ -310,7 +339,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Deluxe Spa Pedicure",
                 shortDescription: "Ultimate relaxation with exfoliation, mask, hot stones, and extended massage.",
-                price: 85,
+                price: 1000,
                 description: [
                     {
                         title: "Ultimate Foot Luxury",
@@ -320,6 +349,12 @@ export const serviceGroups: ServiceGroup[] = [
                 ],
                 images: ["deluxe-pedicure-1.jpg", "deluxe-pedicure-2.jpg"]
             }
+        ],
+        minimalServices: [
+            { title: "Polish Change", price: 200 },
+            { title: "Callus Treatment", price: 300 },
+            { title: "Gel Polish Removal", price: 150 },
+            { title: "French Pedicure", price: 700 }
         ]
     }
 ];

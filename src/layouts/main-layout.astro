@@ -59,6 +59,7 @@ import Footer from '../components/footer.astro';
     --font-primary: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     --font-heading: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     
+    --max-width-content: 1400px;    /* Maximum content width */
     --transition-speed: 0.3s;
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -171,8 +172,115 @@ p.lead {
     color: var(--color-text-dark);
 }
 
+/* ===================================
+   Description Block Styles (Shared)
+   =================================== */
+.description-block h2 {
+    color: var(--color-secondary);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.description-block h3 {
+    color: var(--color-secondary);
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.description-block h4 {
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.description-block h5 {
+    color: var(--color-secondary);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.description-block p,
+.service-group-description,
+.description-muted {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.description-muted {
+    opacity: 0.80;
+}
+
+/* ===================================
+   Image Wrapper Styles (Shared)
+   =================================== */
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--color-bg-light) 0%, #E0E0E0 100%);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* ===================================
+   Collapse Toggle Button (Shared)
+   =================================== */
+.collapse-toggle-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.collapse-toggle-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.collapse-toggle-btn:focus-visible {
+    outline: none;
+}
+
+.toggle-icon {
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.collapse-toggle-btn[aria-expanded="false"] .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.collapse-toggle-btn[aria-expanded="true"] .toggle-icon {
+    transform: rotate(0deg);
+}
+
 /* Responsive Typography */
 @media (max-width: 768px) {
+    .toggle-icon {
+        width: 20px;
+        height: 20px;
+    }
+
     h1 {
         font-size: 2.25rem;
     }
@@ -194,6 +302,20 @@ p.lead {
     }
 
     p.lead {
+        font-size: 1rem;
+    }
+
+    .description-block h2 {
+        font-size: 1.5rem;
+    }
+
+    .description-block h3 {
+        font-size: 1.35rem;
+    }
+
+    .description-block p,
+    .service-group-description,
+    .description-muted {
         font-size: 1rem;
     }
 }

@@ -1,0 +1,46 @@
+---
+import type { ServiceGroup } from '../data/services';
+
+interface Props {
+    serviceGroup: ServiceGroup;
+}
+
+const { serviceGroup } = Astro.props;
+---
+
+<div class="service-group-detail">
+    <div class="service-group-descriptions">
+        {serviceGroup.description.map((desc) => (
+            <div class="description-block mb-4">
+                {desc.title && desc.titleType === 'h2' && (
+                    <h2 class="section-title mb-3">{desc.title}</h2>
+                )}
+                {desc.title && desc.titleType === 'h3' && (
+                    <h3 class="mb-3">{desc.title}</h3>
+                )}
+                {desc.title && desc.titleType === 'h4' && (
+                    <h4 class="mb-3">{desc.title}</h4>
+                )}
+                {desc.title && desc.titleType === 'h5' && (
+                    <h5 class="mb-3">{desc.title}</h5>
+                )}
+                <p class="description-muted">{desc.text}</p>
+            </div>
+        ))}
+    </div>
+
+    <!-- Service Group Images -->
+    {serviceGroup.images && serviceGroup.images.length > 0 && (
+        <div class="row g-3 mt-4">
+            {serviceGroup.images.map((image) => (
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="image-wrapper">
+                        <img src={`/images/${image}`} alt={serviceGroup.name} class="img-fluid rounded shadow-sm" />
+                    </div>
+                </div>
+            ))}
+        </div>
+    )}
+</div>
+
+
