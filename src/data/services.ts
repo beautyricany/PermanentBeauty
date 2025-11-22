@@ -57,7 +57,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Microblading",
                 shortDescription: "Natural hair-like strokes for fuller, defined brows.",
-                price: 450,
+                price: 11000,
                 description: [
                     {
                         title: "Natural Hair-Like Strokes",
@@ -74,7 +74,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Powder Brows",
                 shortDescription: "Soft, powdered makeup look perfect for all skin types.",
-                price: 475,
+                price: 12000,
                 description: [
                     {
                         title: "Soft Makeup Finish",
@@ -91,9 +91,9 @@ export const serviceGroups: ServiceGroup[] = [
             }
         ],
         minimalServices: [
-            { title: "Brow Touch-Up Session", price: 150 },
-            { title: "Brow Color Refresh", price: 200 },
-            { title: "Combination Brows", price: 525 }
+            { title: "Brow Touch-Up Session", price: 3500 },
+            { title: "Brow Color Refresh", price: 5000 },
+            { title: "Combination Brows", price: 13000 }
         ]
     },
     {
@@ -115,7 +115,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Permanent Eyeliner",
                 shortDescription: "Waterproof, smudge-proof eyeliner that lasts years.",
-                price: 375,
+                price: 9000,
                 description: [
                     {
                         title: "Effortless Definition",
@@ -131,10 +131,10 @@ export const serviceGroups: ServiceGroup[] = [
             }
         ],
         minimalServices: [
-            { title: "Eyeliner Touch-Up", price: 125 },
-            { title: "Lower Lash Line Only", price: 250 },
-            { title: "Winged Eyeliner", price: 425 },
-            { title: "Lash Enhancement", price: 300 }
+            { title: "Eyeliner Touch-Up", price: 3000 },
+            { title: "Lower Lash Line Only", price: 6000 },
+            { title: "Winged Eyeliner", price: 10000 },
+            { title: "Lash Enhancement", price: 7000 }
         ]
     },
     {
@@ -157,7 +157,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Lip Blushing",
                 shortDescription: "Natural tint for fuller-looking lips with custom color matching.",
-                price: 500,
+                price: 12000,
                 description: [
                     {
                         title: "Natural Lip Enhancement",
@@ -226,7 +226,7 @@ export const serviceGroups: ServiceGroup[] = [
             }
         ],
         minimalServices: [
-            { title: "Freckles Enhancement", price: 200 },
+            { title: "Freckles Enhancement", price: 5000 },
             { title: "Areola Restoration", price: 0 },
             { title: "Hairline Enhancement", price: 0 }
         ]
@@ -250,7 +250,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Classic Manicure",
                 shortDescription: "Traditional manicure with nail shaping, cuticle care, and polish.",
-                price: 35,
+                price: 400,
                 description: [
                     {
                         title: "Timeless Nail Care",
@@ -263,7 +263,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Gel Manicure",
                 shortDescription: "Long-lasting gel polish with chip-resistant shine for up to 3 weeks.",
-                price: 55,
+                price: 600,
                 description: [
                     {
                         title: "Long-Lasting Shine",
@@ -276,7 +276,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Deluxe Spa Manicure",
                 shortDescription: "Ultimate hand pampering with exfoliation, mask, and extended massage.",
-                price: 65,
+                price: 800,
                 description: [
                     {
                         title: "Ultimate Hand Pampering",
@@ -288,10 +288,10 @@ export const serviceGroups: ServiceGroup[] = [
             }
         ],
         minimalServices: [
-            { title: "Polish Change", price: 15 },
-            { title: "Gel Polish Removal", price: 10 },
-            { title: "Nail Repair", price: 5 },
-            { title: "French Manicure", price: 50 }
+            { title: "Polish Change", price: 150 },
+            { title: "Gel Polish Removal", price: 100 },
+            { title: "Nail Repair", price: 120 },
+            { title: "French Manicure", price: 1200 }
         ]
     },
     {
@@ -313,7 +313,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Classic Pedicure",
                 shortDescription: "Essential foot care with nail trimming, callus removal, and polish.",
-                price: 45,
+                price: 500,
                 description: [
                     {
                         title: "Essential Foot Care",
@@ -326,7 +326,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Gel Pedicure",
                 shortDescription: "Long-lasting gel polish on perfectly pampered feet.",
-                price: 65,
+                price: 750,
                 description: [
                     {
                         title: "Long-Lasting Beauty",
@@ -339,7 +339,7 @@ export const serviceGroups: ServiceGroup[] = [
             {
                 title: "Deluxe Spa Pedicure",
                 shortDescription: "Ultimate relaxation with exfoliation, mask, hot stones, and extended massage.",
-                price: 85,
+                price: 1000,
                 description: [
                     {
                         title: "Ultimate Foot Luxury",
@@ -351,10 +351,10 @@ export const serviceGroups: ServiceGroup[] = [
             }
         ],
         minimalServices: [
-            { title: "Polish Change", price: 20 },
-            { title: "Callus Treatment", price: 25 },
-            { title: "Gel Polish Removal", price: 15 },
-            { title: "French Pedicure", price: 60 }
+            { title: "Polish Change", price: 200 },
+            { title: "Callus Treatment", price: 300 },
+            { title: "Gel Polish Removal", price: 150 },
+            { title: "French Pedicure", price: 700 }
         ]
     }
 ];

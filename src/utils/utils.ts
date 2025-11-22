@@ -5,5 +5,5 @@
  */
 export function formatPrice(price: number): string {
     if (price === 0) return "Consultation Required";
-    return `$${price}`;
+    return `${price} Kč`;
 }
