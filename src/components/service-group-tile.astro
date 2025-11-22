@@ -18,7 +18,7 @@ const collapseId = groupId || serviceGroup.name.toLowerCase().replace(/\s+/g, '-
                 <h2 class="section-title service-group-name mb-2">{serviceGroup.name}</h2>
             </a>
             {serviceGroup.shortDescription && (
-                <p class="service-group-description text-muted mb-0">{serviceGroup.shortDescription}</p>
+                <p class="description-muted mb-0">{serviceGroup.shortDescription}</p>
             )}
         </div>
         <button 
@@ -109,12 +109,6 @@ const collapseId = groupId || serviceGroup.name.toLowerCase().replace(/\s+/g, '-
 
     .collapse-toggle-btn:focus-visible {
         outline: none;
-    }
-
-    .service-group-description {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        max-width: 800px;
     }
 
     .toggle-icon {
