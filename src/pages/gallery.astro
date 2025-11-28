@@ -1,0 +1,21 @@
+---
+import PageLayout from '../layouts/page-layout.astro';
+import ImageGroup from '../components/image-group.astro';
+import { imageGroups } from '../data/gallery';
+---
+
+<PageLayout title="Gallery" subtitle="Browse our portfolio of permanent makeup transformations">
+    <section class="gallery-section py-4">
+        <div class="container">
+            {imageGroups.map((group) => (
+                <ImageGroup imageGroup={group} />
+            ))}
+        </div>
+    </section>
+</PageLayout>
+
+<style>
+    .gallery-section {
+        padding: 2rem 0;
+    }
+</style>
